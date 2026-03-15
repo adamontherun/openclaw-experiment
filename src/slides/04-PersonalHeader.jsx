@@ -1,10 +1,10 @@
 export function PersonalHeaderSlide() {
   return (
     <div className="centered">
-      <p className="kicker">Section 2</p>
-      <h2 className="sectionHeader glow">Personal Life<br />Automations</h2>
+      <p className="kicker">Part 1</p>
+      <h1 className="sectionHeader glow">Personal Life</h1>
       <div className="accentBar" />
-      <p className="lead">Daily reminders, family logistics, and communication workflows &mdash; all handled by OpenClaw.</p>
+      <p className="lead">9 skills. 7 daily crons.<br />From news digests to dad jokes to workout accountability.</p>
     </div>
   );
 }

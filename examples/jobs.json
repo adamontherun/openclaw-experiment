@@ -1,0 +1,544 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "nightly-workspace-commit",
+      "agentId": "main",
+      "name": "Nightly workspace commit and push",
+      "enabled": true,
+      "createdAtMs": 1770409800000,
+      "updatedAtMs": 1773568826598,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the nightly-workspace-commit skill (workspace/skills/nightly-workspace-commit/SKILL.md) and follow it exactly."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1773655200000,
+        "lastRunAtMs": 1773568800018,
+        "lastStatus": "ok",
+        "lastDurationMs": 26580,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "04e92d3b-c560-415d-9a9c-681c569f94df",
+      "agentId": "main",
+      "name": "Daily morning joke for Heather",
+      "enabled": true,
+      "createdAtMs": 1770183215082,
+      "updatedAtMs": 1773601238247,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the heather-morning-joke skill (workspace/skills/heather-morning-joke/SKILL.md) and follow it exactly. Reddit sourcing is mandatory. Update rolling dedup history in workspace/skills/heather-morning-joke/recent_jokes.md (keep only latest 5 entries). Final delivery text must be plain text only: no escaped sequences, no literal \\n/\\t/\\\\, and no JSON-style quoting. Finish with only the final joke text for cron delivery.",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "imessage",
+        "to": "+18083581128"
+      },
+      "state": {
+        "nextRunAtMs": 1773687600000,
+        "lastRunAtMs": 1773601200013,
+        "lastStatus": "ok",
+        "lastDurationMs": 38234,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "ffcf8493-b756-4ce5-b076-ef75a3816689",
+      "agentId": "main",
+      "name": "daily brief",
+      "enabled": true,
+      "createdAtMs": 1770942016033,
+      "updatedAtMs": 1773583394853,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "timeoutSeconds": 1800,
+        "message": "Read the daily-brief skill (workspace skills/daily-brief/SKILL.md) and follow its instructions. Gather data from Reddit and web (tavily + web_search) for the past 24 hours, compile the brief as a Telegram-friendly formatted message, update the archive with the final sent text, then send that message to Telegram exactly as defined in the skill. CRITICAL: do not create or attach any file, and do not use native cron announce delivery for this job. Send now."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1773669600000,
+        "lastRunAtMs": 1773583200013,
+        "lastStatus": "ok",
+        "lastDurationMs": 194840,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "79083676-e843-4ff3-8f2f-e76d6cd40a08",
+      "agentId": "main",
+      "name": "Daily Sleep Tracker Reminder",
+      "enabled": true,
+      "createdAtMs": 1771352293399,
+      "updatedAtMs": 1773598550329,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 8 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "You are running the daily sleep reminder automation.\n\nRules:\n- Use HST timezone.\n- Determine whether Adam already submitted sleep feedback for last night (HST).\n- Do this by running: sqlite3 ~/.openclaw/memory/sleep.sqlite \"SELECT count(*) FROM sleep_entries WHERE sleep_date = date('now', '-1 day', 'localtime');\"\n  (Set TZ=Pacific/Honolulu before the command so 'localtime' resolves to HST.)\n- If the count is >= 1, do not send any message and finish with exactly: SKIP_ALREADY_LOGGED\n- If the count is 0, send one Telegram message to telegram:-5251546190 with exactly this text:\nHey Adam, morning! How did you sleep last night? Just reply naturally with whatever you remember about sleep quality, dinner/food, drinks, wake-ups, and whether your stomach bothered you. I will log it for you.\n- After sending, finish with exactly: SENT_REMINDER\n- Do not send to any other target.\n- Do not add any timestamps, explanations, or extra text."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1773684900000,
+        "lastRunAtMs": 1773598500014,
+        "lastStatus": "ok",
+        "lastDurationMs": 50315,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "workout-morning-pump",
+      "agentId": "main",
+      "name": "Morning Workout Motivation",
+      "enabled": true,
+      "createdAtMs": 1771454413511,
+      "updatedAtMs": 1773608533326,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the workout-accountability skill (workspace/skills/workout-accountability/SKILL.md) and follow it in morning-motivation mode. Use ladder-fitness to check today's Ladder workout and weave real workout context into a short dynamic message. Send at most one message to telegram:-5277817028, 3-4 short lines, 1-2 emojis, varied voice/day theme, no generic filler."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773694800000,
+        "lastRunAtMs": 1773608400016,
+        "lastStatus": "ok",
+        "lastDurationMs": 133310,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "workout-afternoon-check",
+      "agentId": "main",
+      "name": "Afternoon Workout Accountability Check",
+      "enabled": true,
+      "createdAtMs": 1771454413511,
+      "updatedAtMs": 1773540088443,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 16 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the workout-accountability skill (workspace/skills/workout-accountability/SKILL.md) and run afternoon-accountability mode. CRITICAL: Before any Ladder check, read the last 30 lines of the workout Telegram group session file at /Users/adamsmith/.openclaw/agents/main/sessions/01b1fb4f-69ed-459f-9a10-3a65b6f67405.jsonl to check for today's messages from Adam. If Adam said he is sick, not feeling well, injured, recovering, resting, or not working out today, send zero messages and stop. If he mentioned volleyball or another workout, do not nag about Ladder. Only if no skip signal is found, use ladder-fitness to check Ladder completion and send at most one message to telegram:-5277817028. Keep to 3-4 short lines, 1-2 emojis, varied voice/day theme."
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773626400000,
+        "lastRunAtMs": 1773540000011,
+        "lastStatus": "ok",
+        "lastDurationMs": 88432,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      },
+      "delivery": {
+        "mode": "announce"
+      }
+    },
+    {
+      "id": "volleyintel-daily-brief",
+      "agentId": "volleyintel",
+      "name": "VolleyIntel Daily Morning Brief",
+      "enabled": true,
+      "createdAtMs": 1773312000000,
+      "updatedAtMs": 1773614619636,
+      "schedule": {
+        "kind": "cron",
+        "expr": "40 12 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "timeoutSeconds": 900,
+        "message": "Read the volleyintel-brief skill (workspace skills/volleyintel-brief/SKILL.md). Build and send the daily brief to telegram:-5271219210. Use browser automation for Reddit Ads and Google Search Console. Use node scripts for PostHog and Clerk metrics. Read memory/engagement.db and memory/mentions.db via the workspace scripts and include those database-backed sections in the brief. Include trends and key changes since the prior day."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773700800000,
+        "lastRunAtMs": 1773614400013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 219623,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "volleyintel-social-content",
+      "agentId": "volleyintel",
+      "name": "VolleyIntel Daily Social Content",
+      "enabled": true,
+      "createdAtMs": 1773312000000,
+      "updatedAtMs": 1773606749378,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 10 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "timeoutSeconds": 900,
+        "message": "Read the social-content skill (workspace-volleyintel/skills/social-content/SKILL.md) and follow it exactly. Create one daily social content package, publish it directly without asking for approval, mark the run published, and send only the final completion summary to telegram:-5271219210 after posting succeeds."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1773693000000,
+        "lastRunAtMs": 1773606600013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 149365,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "acae0e8e-ae9f-4656-87fd-c4c86b4e45a1",
+      "agentId": "volleyintel",
+      "name": "VolleyIntel Web+API Healthcheck",
+      "enabled": true,
+      "createdAtMs": 1772765850946,
+      "updatedAtMs": 1773612008289,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0,12 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the volleyintel-healthcheck skill (workspace-volleyintel/skills/volleyintel-healthcheck/SKILL.md) and follow it exactly.",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773655200000,
+        "lastRunAtMs": 1773612000013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 8276,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b856320b-f40b-43e6-bd0e-b621971657a1",
+      "agentId": "volleyintel",
+      "name": "VolleyIntel Gmail Triage",
+      "enabled": true,
+      "createdAtMs": 1773284959689,
+      "updatedAtMs": 1773610618345,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 11 * * *",
+        "tz": "Pacific/Honolulu",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "timeoutSeconds": 300,
+        "message": "Read the gmail-manager skill (workspace skills/gmail-manager/SKILL.md) and run triage mode. Use gog with --account adam@volleyintel.com to process inbox messages from the last 6 hours, archive spam and promotions, draft replies for valid customer inquiries using BRAND.md and knowledge-base files, save pending replies, and send a numbered approval summary to telegram:-5271219210."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773696893309,
+        "consecutiveErrors": 0,
+        "lastRunAtMs": 1773610493322,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 125023,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "9882b534-57a0-4b46-b673-b03fc5b190f4",
+      "agentId": "volleyintel",
+      "name": "Social Monitor",
+      "enabled": true,
+      "createdAtMs": 1773361207567,
+      "updatedAtMs": 1773611319384,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 11 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the social-monitor skill (workspace skills/social-monitor/SKILL.md) and execute it exactly. Check all four platforms for direct mentions of VolleyIntel, log any new mentions to memory/mentions.db, and do not send any Telegram summary; the daily volleyintel-brief reports results from the database."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773697500000,
+        "lastRunAtMs": 1773611100008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 219376,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "cf685999-4517-4c83-a602-763f15c04a1d",
+      "agentId": "volleyintel",
+      "name": "X Engage",
+      "enabled": true,
+      "createdAtMs": 1773463867404,
+      "updatedAtMs": 1773612501505,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the x-engage skill (workspace skills/x-engage/SKILL.md) and execute it exactly. Search for volleyball recruit, choose top 3 accounts not already in memory/engagement.db, follow, like, and reply on one post for each, log every action to memory/engagement.db, and do not send any Telegram summary; the daily volleyintel-brief reports results from the database.",
+        "timeoutSeconds": 900
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last",
+        "to": "telegram:-5282250150"
+      },
+      "state": {
+        "nextRunAtMs": 1773698400000,
+        "lastRunAtMs": 1773612008289,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 493216,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "7cc72c12-ccb3-4b94-b45f-b88072dd23f6",
+      "agentId": "volleyintel",
+      "name": "Instagram Engage",
+      "enabled": true,
+      "createdAtMs": 1773463868219,
+      "updatedAtMs": 1773612936231,
+      "schedule": {
+        "kind": "cron",
+        "expr": "10 12 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the instagram-engage skill (workspace skills/instagram-engage/SKILL.md) and execute it exactly. Search for volleyball recruit, choose top 3 accounts not already in memory/engagement.db, follow, like, and reply on one post for each, log every action to memory/engagement.db, and do not send any Telegram summary; the daily volleyintel-brief reports results from the database.",
+        "timeoutSeconds": 900
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last",
+        "to": "telegram:-5282250150"
+      },
+      "state": {
+        "nextRunAtMs": 1773699000000,
+        "lastRunAtMs": 1773612600009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 336222,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "85339dcc-aaad-412c-a715-25dd13ad2fe0",
+      "agentId": "volleyintel",
+      "name": "Threads Engage",
+      "enabled": true,
+      "createdAtMs": 1773463869021,
+      "updatedAtMs": 1773613463404,
+      "schedule": {
+        "kind": "cron",
+        "expr": "20 12 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the threads-engage skill (workspace skills/threads-engage/SKILL.md) and execute it exactly. Search for volleyball recruit, choose top 3 accounts not already in memory/engagement.db, follow, like, and reply on one post for each, log every action to memory/engagement.db, and do not send any Telegram summary; the daily volleyintel-brief reports results from the database.",
+        "timeoutSeconds": 900
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last",
+        "to": "telegram:-5282250150"
+      },
+      "state": {
+        "nextRunAtMs": 1773699600000,
+        "lastRunAtMs": 1773613200011,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 263393,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "94059abe-c3ee-45de-80a4-0536a667aa56",
+      "agentId": "volleyintel",
+      "name": "Reddit Engage",
+      "enabled": true,
+      "createdAtMs": 1773463869827,
+      "updatedAtMs": 1773614233395,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 12 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the reddit-engage skill (workspace skills/reddit-engage/SKILL.md) and execute it exactly. Search for volleyball recruit, choose top 3 accounts not already in memory/engagement.db, follow, like, and reply on one post for each, log every action to memory/engagement.db, and do not send any Telegram summary; the daily volleyintel-brief reports results from the database.",
+        "timeoutSeconds": 900
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last",
+        "to": "telegram:-5282250150"
+      },
+      "state": {
+        "nextRunAtMs": 1773700200000,
+        "lastRunAtMs": 1773613800009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 433386,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "cf678f2c-e124-4d8a-8436-3d9ce76380a0",
+      "agentId": "main",
+      "name": "Nightly database backup",
+      "description": "Back up main and VolleyIntel databases to Google Drive using Gog",
+      "enabled": true,
+      "createdAtMs": 1773556449471,
+      "updatedAtMs": 1773572462709,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 1 * * *",
+        "tz": "Pacific/Honolulu"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read the nightly-database-backup skill (workspace/skills/nightly-database-backup/SKILL.md) and follow it exactly.",
+        "timeoutSeconds": 900
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773658800000,
+        "lastRunAtMs": 1773572400013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 62696,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    }
+  ]
+}
