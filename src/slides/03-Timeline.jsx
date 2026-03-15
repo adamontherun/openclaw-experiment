@@ -3,23 +3,28 @@ import { Fragment } from '@revealjs/react';
 export function TimelineSlide() {
   return (
     <div>
-      <p className="kicker">Timeline</p>
-      <h2 className="sectionHeader">Started in January</h2>
-      <div className="timeline">
-        <div className="timelineItem">
+      <p className="kicker">The Journey</p>
+      <h2>From Curiosity to Daily Reliance</h2>
+      <div className="timelineRow">
+        <div className="timelineCol">
+          <p className="timeNum">01</p>
           <h3>January</h3>
-          <p>Started using OpenClaw daily for practical, repetitive tasks.</p>
+          <p>Started using OpenClaw for simple daily tasks and reminders.</p>
         </div>
-        <div className="timelineItem fragment fade-up">
-          <h3>February-March</h3>
-          <p>Expanded to family logistics, reminders, and communication workflows.</p>
-        </div>
-        <div className="timelineItem">
-          <Fragment animation="fade-up">
+        <Fragment animation="fade-up">
+          <div className="timelineCol">
+            <p className="timeNum">02</p>
+            <h3>Feb &ndash; Mar</h3>
+            <p>Expanded into family logistics, communications, and scheduling.</p>
+          </div>
+        </Fragment>
+        <Fragment animation="fade-up">
+          <div className="timelineCol">
+            <p className="timeNum">03</p>
             <h3>Now</h3>
-            <p>Running a personal + micro SaaS automation engine with real value and real constraints.</p>
-          </Fragment>
-        </div>
+            <p>Running personal automations and a micro SaaS experiment daily.</p>
+          </div>
+        </Fragment>
       </div>
     </div>
   );

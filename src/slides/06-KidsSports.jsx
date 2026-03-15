@@ -4,20 +4,22 @@ export function KidsSportsSlide() {
   return (
     <div>
       <p className="kicker">Family Logistics</p>
-      <h2 className="sectionHeader">Kids Sports Scheduling</h2>
+      <h2>Kids Sports Scheduling</h2>
       <div className="slideGrid">
         <div className="card">
-          <p className="metric">1</p>
-          <p>Collect schedules and updates</p>
+          <p className="metric">Collect</p>
+          <p>Pull schedules, updates, and changes from multiple sources.</p>
         </div>
-        <div className="card fragment fade-up">
-          <p className="metric">2</p>
-          <p>Summarize conflicts and priorities</p>
-        </div>
+        <Fragment animation="fade-up">
+          <div className="card">
+            <p className="metric">Summarize</p>
+            <p>Surface conflicts, priorities, and what matters this week.</p>
+          </div>
+        </Fragment>
       </div>
-      <p style={{ marginTop: 24 }}>
-        <Fragment animation="fade-up">Fewer misses, less context switching, calmer mornings.</Fragment>
-      </p>
+      <Fragment animation="fade-up">
+        <p className="mini" style={{ marginTop: 22 }}>Fewer misses, less context switching, calmer mornings.</p>
+      </Fragment>
     </div>
   );
 }

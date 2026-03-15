@@ -1,9 +1,10 @@
 export function VolleyIntelHeaderSlide() {
   return (
-    <div>
+    <div className="centered">
       <p className="kicker">Section 3</p>
-      <h2 className="sectionHeader glow">VolleyIntel: The Micro SaaS Experiment</h2>
-      <p className="lead">A focused intelligence layer for D1 women&apos;s volleyball recruiting workflows.</p>
+      <h2 className="sectionHeader glow">VolleyIntel:<br />The Micro SaaS Experiment</h2>
+      <div className="accentBar" />
+      <p className="lead">Collecting D1 women&apos;s volleyball recruiting intel &mdash; staff, program needs, and application details.</p>
     </div>
   );
 }

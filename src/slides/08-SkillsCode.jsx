@@ -1,4 +1,4 @@
-import { Code, Fragment } from '@revealjs/react';
+import { Code } from '@revealjs/react';
 
 const skillsSnippet = `{
   "name": "Morning Planner",
@@ -15,12 +15,10 @@ const skillsSnippet = `{
 export function SkillsCodeSlide() {
   return (
     <div>
-      <p className="kicker">Code Showcase</p>
-      <h2 className="sectionHeader">Skills File Pattern</h2>
-      <p className="mini">
-        <Fragment animation="fade-up">Placeholder structure ready for your real OpenClaw skill config.</Fragment>
-      </p>
-      <Code language="json" lineNumbers="1-2|3-5|6-8|9-11">
+      <p className="kicker">Code</p>
+      <h2>Skills File Pattern</h2>
+      <p className="mini" style={{ marginBottom: 16 }}>Placeholder &mdash; swap with your real OpenClaw config.</p>
+      <Code language="json" lineNumbers="1-3|4-9|10-11">
         {skillsSnippet}
       </Code>
     </div>

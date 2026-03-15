@@ -1,9 +1,10 @@
 export function TitleSlide() {
   return (
-    <div className="floatIn">
-      <p className="kicker">OpenClaw + Reveal.js Showcase</p>
-      <h1 className="glow">OpenClaw: My AI-Powered Life</h1>
-      <p className="lead">From personal daily automations to building VolleyIntel as an experimental micro SaaS.</p>
+    <div className="centered floatIn">
+      <p className="kicker">A Reveal.js Showcase</p>
+      <h1 className="glow">OpenClaw:<br />My AI-Powered Life</h1>
+      <div className="accentBar" />
+      <p className="lead">From personal daily automations to building a micro SaaS experiment called VolleyIntel.</p>
     </div>
   );
 }

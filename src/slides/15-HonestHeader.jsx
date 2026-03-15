@@ -1,9 +1,10 @@
 export function HonestHeaderSlide() {
   return (
-    <div>
+    <div className="centered">
       <p className="kicker">Section 4</p>
-      <h2 className="sectionHeader glow">The Good and the Not-So-Good</h2>
-      <p className="lead">OpenClaw has delivered strong value, with a few reliability tradeoffs that matter in production usage.</p>
+      <h2 className="sectionHeader glow">The Good &amp;<br />the Not-So-Good</h2>
+      <div className="accentBar" />
+      <p className="lead">Real value delivered, with real constraints that matter at scale.</p>
     </div>
   );
 }
