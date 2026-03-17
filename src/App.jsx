@@ -3,7 +3,6 @@ import RevealHighlight from 'reveal.js/plugin/highlight';
 import { TitleSlide } from './slides/01-Title';
 import { HookSlide } from './slides/02-Hook';
 import { TimelineSlide } from './slides/03-Timeline';
-import { PersonalHeaderSlide } from './slides/04-PersonalHeader';
 import { RustyShowcaseSlide, SHOWCASE_COUNT } from './slides/04a-RustyShowcase';
 import { DailyBriefSlide } from './slides/05-DailyBrief';
 import { HeatherJokeExamplesSlide, HeatherJokeSlide } from './slides/06-HeatherJoke';
@@ -75,9 +74,6 @@ export default function App() {
       </Slide>
 
       <Stack>
-        <Slide backgroundGradient={BG.sectionA}>
-          <PersonalHeaderSlide />
-        </Slide>
         {Array.from({ length: SHOWCASE_COUNT }, (_, i) => (
           <Slide key={`showcase-${i}`} transition="fade" backgroundGradient={BG.sectionA}>
             <RustyShowcaseSlide index={i} />
