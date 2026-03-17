@@ -115,42 +115,44 @@ export function VolleyIntelBriefSlide() {
       <p className="mini" style={{ marginBottom: 8 }}>
         Real Telegram delivery from March 15, 2026.
       </p>
-      <div className="briefScrollView" style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
-        <div className="briefExampleLayout briefFullWidth">
-          <div className="briefTranscriptShell">
-            <div className="briefTranscriptTop">
-              <span className="briefTranscriptApp">Telegram</span>
-              <span className="briefTranscriptMeta">sent 12:40 PM HST</span>
+      <div
+        className="briefScrollView"
+        data-prevent-swipe
+        style={{ flex: 1, minHeight: 0 }}
+      >
+        <div className="briefTranscriptShell" style={{ marginTop: 10 }}>
+          <div className="briefTranscriptTop">
+            <span className="briefTranscriptApp">Telegram</span>
+            <span className="briefTranscriptMeta">sent 12:40 PM HST</span>
+          </div>
+          <div className="briefTranscript">
+            <div className="briefTranscriptHeader">
+              <div className="briefTranscriptEmoji">🏐</div>
+              <div>
+                <strong>VolleyIntel Daily Brief</strong>
+                <div className="briefTranscriptDate">2026-03-15</div>
+              </div>
             </div>
-            <div className="briefTranscript">
-              <div className="briefTranscriptHeader">
-                <div className="briefTranscriptEmoji">🏐</div>
-                <div>
-                  <strong>VolleyIntel Daily Brief</strong>
-                  <div className="briefTranscriptDate">2026-03-15</div>
+            {sections.map((section) => (
+              <div key={section.title} className={`briefSectionCard ${section.tone}`}>
+                <div className="briefSectionTitleRow">
+                  <span className="briefSectionIcon">{section.emoji}</span>
+                  <span className="briefSectionTitle">{section.title}</span>
+                </div>
+                <p className="briefSectionSummary">{section.summary}</p>
+                <div className="briefBullets">
+                  {section.lines.map((line) => (
+                    <div key={line} className="briefBullet">
+                      {line}
+                    </div>
+                  ))}
+                </div>
+                <div className="briefTrendLine">
+                  <span className="briefTrendLabel">Trend</span>
+                  <span>{section.trend}</span>
                 </div>
               </div>
-              {sections.map((section) => (
-                <div key={section.title} className={`briefSectionCard ${section.tone}`}>
-                  <div className="briefSectionTitleRow">
-                    <span className="briefSectionIcon">{section.emoji}</span>
-                    <span className="briefSectionTitle">{section.title}</span>
-                  </div>
-                  <p className="briefSectionSummary">{section.summary}</p>
-                  <div className="briefBullets">
-                    {section.lines.map((line) => (
-                      <div key={line} className="briefBullet">
-                        {line}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="briefTrendLine">
-                    <span className="briefTrendLabel">Trend</span>
-                    <span>{section.trend}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>

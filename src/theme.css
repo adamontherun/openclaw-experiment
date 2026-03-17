@@ -1170,28 +1170,7 @@
 .reveal .briefScrollView {
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-right: 8px;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 240, 255, 0.35) transparent;
-}
-
-.reveal .briefScrollView::-webkit-scrollbar {
-  width: 6px;
-}
-
-.reveal .briefScrollView::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.reveal .briefScrollView::-webkit-scrollbar-thumb {
-  background: rgba(0, 240, 255, 0.35);
-  border-radius: 3px;
-}
-
-.reveal .briefScrollView::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 240, 255, 0.5);
+  overflow: hidden;
 }
 
 .reveal .briefExampleLayout {
@@ -1238,12 +1217,34 @@
 }
 
 .reveal .briefTranscript {
+  max-height: 460px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 240, 255, 0.35) transparent;
   border-radius: 18px;
   padding: 16px;
   background:
     radial-gradient(circle at top right, rgba(0, 240, 255, 0.08), transparent 28%),
     linear-gradient(180deg, rgba(16, 21, 42, 0.96) 0%, rgba(10, 13, 24, 0.98) 100%);
   border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.reveal .briefTranscript::-webkit-scrollbar {
+  width: 6px;
+}
+
+.reveal .briefTranscript::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.reveal .briefTranscript::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.35);
+  border-radius: 3px;
+}
+
+.reveal .briefTranscript::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.5);
 }
 
 .reveal .briefTranscriptHeader {
