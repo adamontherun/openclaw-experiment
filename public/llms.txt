@@ -1,0 +1,33 @@
+# OpenClaw: Adam + Rusty
+
+URL: https://adamontherun.github.io/openclaw-experiment/
+Repository: https://github.com/adamontherun/openclaw-experiment
+Type: Reveal.js presentation
+
+Summary:
+OpenClaw: Adam + Rusty is a web presentation about using one AI agent to automate personal life workflows and run a volleyball micro-SaaS. The deck covers daily briefs, email triage, jokes, sports logistics, social engagement, content generation, and business reporting.
+
+Key topics:
+- AI agents
+- automation
+- personal workflow tooling
+- micro-SaaS operations
+- content generation
+- social media automation
+- Reveal.js presentations
+
+Primary sections:
+- Title and framing
+- Personal life automations
+- Rusty showcase screenshots
+- Daily brief and iMessage joke workflows
+- Sports logistics and personal crons
+- VolleyIntel micro-SaaS
+- Gmail triage and approvals
+- Social engagement engine
+- Content generation pipeline
+- Daily business brief
+- Lessons learned and alternatives
+
+Preview image:
+https://adamontherun.github.io/openclaw-experiment/images/ig-cross-training-post.png
