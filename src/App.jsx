@@ -22,6 +22,7 @@ import { HonestHeaderSlide } from './slides/18-HonestHeader';
 import { TheGoodSlide } from './slides/19-TheGood';
 import { TheProblemsSlide } from './slides/20-TheProblems';
 import { AlternativesSlide } from './slides/21-Alternatives';
+import { JensenQuoteSlide } from './slides/22-JensenQuote';
 const BG = {
   hero: 'radial-gradient(ellipse at 20% 50%, #0c1445 0%, #080b1a 70%)',
   hook: 'radial-gradient(ellipse at 70% 30%, #12084a 0%, #080b1a 70%)',
@@ -159,6 +160,16 @@ export default function App() {
 
       <Slide backgroundGradient={BG.alts}>
         <AlternativesSlide />
+      </Slide>
+
+      <Slide
+        transition="fade"
+        data-background-image={`${base}images/jensen-huang-openclaw.png`}
+        data-background-size="cover"
+        data-background-position="center top"
+        data-background-opacity="0.5"
+      >
+        <JensenQuoteSlide />
       </Slide>
     </Deck>
   );
