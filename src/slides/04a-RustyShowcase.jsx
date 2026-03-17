@@ -13,14 +13,24 @@ export function RustyShowcaseSlide({ index }) {
       <div className="showcaseHeader">
         <p className="kicker">Part 1</p>
         <h1 className="sectionHeader glow">Personal Life</h1>
-        <div className="accentBar" style={{ margin: '8px auto' }} />
+        <div className="accentBar showcaseAccentBar" />
+        <div className="showcaseCaptionCard">
+          <div className="showcaseCaptionMeta">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <span>{String(showcases.length).padStart(2, '0')}</span>
+          </div>
+          <div className="showcaseCaption">
+            <span className="showcaseCaptionEmoji">{emoji}</span>
+            <span>{headline}</span>
+          </div>
+        </div>
       </div>
-      <div className="showcasePhoneWrap">
-        <img src={img} alt={headline} className="showcasePhone" />
-      </div>
-      <div className="showcaseCaption">
-        <span className="showcaseCaptionEmoji">{emoji}</span>
-        <span>{headline}</span>
+      <div className="showcaseStage">
+        <div className="showcaseOrb showcaseOrbA" />
+        <div className="showcaseOrb showcaseOrbB" />
+        <div className="showcasePhoneWrap">
+          <img src={img} alt={headline} className="showcasePhone" />
+        </div>
       </div>
     </div>
   );
