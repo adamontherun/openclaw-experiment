@@ -371,8 +371,7 @@
   perspective: 1400px;
 }
 
-.reveal .titleLayer,
-.reveal .titleOrbitCard {
+.reveal .titleLayer {
   position: absolute;
   pointer-events: none;
 }
@@ -428,6 +427,7 @@
   animation: titleFloatC 13s ease-in-out infinite;
 }
 
+
 .reveal .titleRing {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -452,50 +452,32 @@
   animation: titleRotateSlowReverse 28s linear infinite;
 }
 
-.reveal .titleOrbitCard {
-  width: 260px;
-  padding: 18px 20px;
-  border-radius: 22px;
-  background:
-    linear-gradient(180deg, rgba(18, 24, 52, 0.78) 0%, rgba(10, 14, 30, 0.62) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow:
-    0 22px 70px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
+
+.reveal .titleBuiltAt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.reveal .titleOrbitCard strong {
-  display: block;
-  font-size: 0.42em;
-  line-height: 1.35;
-  color: rgba(255, 255, 255, 0.94);
-  letter-spacing: -0.01em;
-}
-
-.reveal .titleOrbitCardA {
-  top: 5%;
-  right: 3%;
-  transform: translateZ(70px) rotate(-4deg);
-  animation: titleCardFloatA 11s ease-in-out infinite;
-}
-
-.reveal .titleOrbitCardB {
-  left: 3%;
-  bottom: 8%;
-  transform: translateZ(50px) rotate(7deg);
-  animation: titleCardFloatB 12.5s ease-in-out infinite;
-}
-
-.reveal .titleOrbitLabel {
-  display: inline-block;
-  margin-bottom: 12px;
-  font-size: 0.3em;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+.reveal .titleBuiltAtLabel {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.28em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-cyan);
+  color: rgba(232, 234, 255, 0.4);
 }
+
+.reveal .titleBuiltAtLogo {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
 
 .reveal .titlePanel {
   position: relative;
@@ -559,6 +541,7 @@
   50% { transform: translate3d(20px, -14px, -40px); }
 }
 
+
 @keyframes titleRotateSlow {
   from { transform: translateZ(-100px) rotate(-14deg); }
   to { transform: translateZ(-100px) rotate(346deg); }
@@ -569,15 +552,7 @@
   to { transform: translateZ(-140px) rotate(-350deg); }
 }
 
-@keyframes titleCardFloatA {
-  0%, 100% { transform: translate3d(0, 0, 70px) rotate(-8deg); }
-  50% { transform: translate3d(12px, -10px, 70px) rotate(-5deg); }
-}
 
-@keyframes titleCardFloatB {
-  0%, 100% { transform: translate3d(0, 0, 50px) rotate(7deg); }
-  50% { transform: translate3d(-10px, 12px, 50px) rotate(4deg); }
-}
 
 .reveal .sectionHeader {
   font-size: 2.2em;
