@@ -1,11 +1,13 @@
 import { Fragment } from '@revealjs/react';
 
+const base = import.meta.env.BASE_URL;
+
 export function ContentResultSlide() {
   return (
     <div className="splitSlide">
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <img
-          src="/images/ig-cross-training-post.png"
+          src={`${base}images/ig-cross-training-post.png`}
           alt="VolleyIntel Instagram post — cross-training for volleyball players"
           style={{ maxHeight: 580, borderRadius: 16, boxShadow: '0 24px 64px rgba(0,0,0,0.5)' }}
         />

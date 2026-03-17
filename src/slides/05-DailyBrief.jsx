@@ -1,9 +1,11 @@
+const base = import.meta.env.BASE_URL;
+
 export function DailyBriefSlide() {
   return (
     <div className="splitSlide">
       <div>
         <img
-          src="/images/daily-brief-screenshot.png"
+          src={`${base}images/daily-brief-screenshot.png`}
           alt="Daily brief Telegram message screenshot"
           style={{
             width: '100%',

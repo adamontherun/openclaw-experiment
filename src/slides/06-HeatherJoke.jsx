@@ -1,5 +1,7 @@
 import { Fragment } from '@revealjs/react';
 
+const base = import.meta.env.BASE_URL;
+
 const jokeCards = [
   {
     label: 'Wordplay',
@@ -112,7 +114,7 @@ export function HeatherJokeSlide() {
           padding: '12px 0',
         }}>
         <img
-          src="/images/joke-placeholder.png"
+          src={`${base}images/joke-placeholder.png`}
           alt="iMessage joke screenshot"
           style={{
             width: '100%',

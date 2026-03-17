@@ -1,9 +1,11 @@
+const base = import.meta.env.BASE_URL;
+
 export function ThreadsEngageVideoSlide() {
   return (
     <div className="fullScreenVideoSlide">
       <video
         data-autoplay
-        src="/videos/engage.webm"
+        src={`${base}videos/engage.webm`}
         muted
         loop
         playsInline

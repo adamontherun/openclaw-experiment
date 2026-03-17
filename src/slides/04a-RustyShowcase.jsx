@@ -1,9 +1,11 @@
+const base = import.meta.env.BASE_URL;
+
 const showcases = [
-  { img: '/images/rusty-soccer.png', emoji: '⚽', headline: 'Next game? Handled.' },
-  { img: '/images/rusty-gym.png', emoji: '💪', headline: 'Gym accountability agent' },
-  { img: '/images/rusty-frontdesk.png', emoji: '🏨', headline: 'Building concierge, automated' },
-  { img: '/images/rusty-pickup.png', emoji: '🚗', headline: 'Who\'s picking up the kids?' },
-  { img: '/images/rusty-sleep.png', emoji: '😴', headline: 'Sleep tracking via chat' },
+  { img: `${base}images/rusty-soccer.png`, emoji: '⚽', headline: 'Next game? Handled.' },
+  { img: `${base}images/rusty-gym.png`, emoji: '💪', headline: 'Gym accountability agent' },
+  { img: `${base}images/rusty-frontdesk.png`, emoji: '🏨', headline: 'Building concierge, automated' },
+  { img: `${base}images/rusty-pickup.png`, emoji: '🚗', headline: 'Who\'s picking up the kids?' },
+  { img: `${base}images/rusty-sleep.png`, emoji: '😴', headline: 'Sleep tracking via chat' },
 ];
 
 export function RustyShowcaseSlide({ index }) {

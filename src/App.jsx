@@ -49,6 +49,8 @@ const BG = {
 };
 
 export default function App() {
+  const base = import.meta.env.BASE_URL;
+
   return (
     <Deck
       config={{
@@ -102,7 +104,7 @@ export default function App() {
       <Stack>
         <Slide
           backgroundGradient={BG.sectionB}
-          data-background-video="/videos/volleyintel.webm"
+          data-background-video={`${base}videos/volleyintel.webm`}
           data-background-video-loop
           data-background-video-muted
           data-background-size="cover"
@@ -113,7 +115,7 @@ export default function App() {
         <Slide
           transition="fade"
           backgroundGradient={BG.sectionB}
-          data-background-video="/videos/volleyintel.webm"
+          data-background-video={`${base}videos/volleyintel.webm`}
           data-background-video-loop
           data-background-video-muted
           data-background-size="cover"
