@@ -5,16 +5,17 @@ import { HookSlide } from './slides/02-Hook';
 import { TimelineSlide } from './slides/03-Timeline';
 import { PersonalHeaderSlide } from './slides/04-PersonalHeader';
 import { DailyBriefSlide } from './slides/05-DailyBrief';
-import { HeatherJokeSlide } from './slides/06-HeatherJoke';
+import { HeatherJokeExamplesSlide, HeatherJokeSlide } from './slides/06-HeatherJoke';
 import { HeatherJokeCodeSlide } from './slides/07-HeatherJokeCode';
 import { KidsSportsSlide } from './slides/08-KidsSports';
-import { BuildingEmailSlide } from './slides/09-BuildingEmail';
 import { PersonalCronsSlide } from './slides/10-PersonalCrons';
 import { VolleyIntelHeaderSlide } from './slides/11-VolleyIntelHeader';
-import { WhatIsItSlide } from './slides/12-WhatIsIt';
 import { GmailTriageSlide } from './slides/13-GmailTriage';
-import { ThreadsEngageSlide } from './slides/14-ThreadsEngage';
-import { ContentPipelineSlide } from './slides/15-ContentPipeline';
+import { GmailDraftScreenshotSlide } from './slides/13a-GmailDraftScreenshot';
+import { ThreadsEngageVideoSlide } from './slides/14a-ThreadsEngageVideo';
+import { ContentIdeaSlide } from './slides/15a-ContentIdea';
+import { ContentWorkflowSlide } from './slides/15b-ContentWorkflow';
+import { ContentResultSlide } from './slides/15c-ContentResult';
 import { VolleyIntelBriefSlide } from './slides/16-VolleyIntelBrief';
 import { VolleyIntelCronsSlide } from './slides/17-VolleyIntelCrons';
 import { HonestHeaderSlide } from './slides/18-HonestHeader';
@@ -86,14 +87,14 @@ export default function App() {
         <Slide backgroundGradient={BG.contentA2}>
           <HeatherJokeSlide />
         </Slide>
+        <Slide transition="fade" backgroundGradient={BG.contentA2}>
+          <HeatherJokeExamplesSlide />
+        </Slide>
         <Slide transition="fade" backgroundGradient={BG.codeA}>
           <HeatherJokeCodeSlide />
         </Slide>
         <Slide backgroundGradient={BG.contentA3}>
           <KidsSportsSlide />
-        </Slide>
-        <Slide backgroundGradient={BG.contentA4}>
-          <BuildingEmailSlide />
         </Slide>
         <Slide backgroundGradient={BG.cronA}>
           <PersonalCronsSlide />
@@ -104,17 +105,23 @@ export default function App() {
         <Slide backgroundGradient={BG.sectionB}>
           <VolleyIntelHeaderSlide />
         </Slide>
-        <Slide backgroundGradient={BG.contentB1}>
-          <WhatIsItSlide />
-        </Slide>
         <Slide transition="fade" backgroundGradient={BG.contentB2}>
           <GmailTriageSlide />
         </Slide>
+        <Slide transition="fade" backgroundGradient={BG.contentB2}>
+          <GmailDraftScreenshotSlide />
+        </Slide>
         <Slide transition="fade" backgroundGradient={BG.contentB3}>
-          <ThreadsEngageSlide />
+          <ThreadsEngageVideoSlide />
         </Slide>
         <Slide transition="fade" backgroundGradient={BG.contentB4}>
-          <ContentPipelineSlide />
+          <ContentIdeaSlide />
+        </Slide>
+        <Slide transition="fade" backgroundGradient={BG.contentB4}>
+          <ContentWorkflowSlide />
+        </Slide>
+        <Slide transition="fade" backgroundGradient={BG.contentB5}>
+          <ContentResultSlide />
         </Slide>
         <Slide backgroundGradient={BG.contentB5}>
           <VolleyIntelBriefSlide />

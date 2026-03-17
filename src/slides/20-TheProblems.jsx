@@ -2,7 +2,7 @@ import { Fragment } from '@revealjs/react';
 
 export function TheProblemsSlide() {
   return (
-    <div>
+    <div className="problemsSlide">
       <p className="kicker">What&rsquo;s Not</p>
       <h2>The Problems</h2>
       <div style={{ marginTop: 24 }}>
@@ -21,15 +21,6 @@ export function TheProblemsSlide() {
             <div className="statusContent">
               <h3>Model sensitivity</h3>
               <p>Cheaper models struggle with multi-step skills. Some jobs need explicit &ldquo;higher_reasoning_model&rdquo; fallback.</p>
-            </div>
-          </div>
-        </Fragment>
-        <Fragment animation="fade-up">
-          <div className="statusItem">
-            <div className="statusBar red" />
-            <div className="statusContent">
-              <h3>Prompt fragility</h3>
-              <p>Skills need very precise instructions. Small wording changes can break a working automation.</p>
             </div>
           </div>
         </Fragment>
