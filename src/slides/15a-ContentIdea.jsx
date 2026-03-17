@@ -4,18 +4,12 @@ export function ContentIdeaSlide() {
   return (
     <div>
       <p className="kicker">Content Generation</p>
-      <h2 style={{ marginBottom: 6 }}>Fresh Content, Every Day, 🦥 Effort</h2>
-      <p
-        style={{
-          fontSize: '0.52em',
-          color: 'rgba(232,234,255,0.68)',
-          lineHeight: 1.55,
-          maxWidth: 900,
-          marginBottom: 20,
-        }}>
-        VolleyIntel posts daily across Instagram, Threads, and X &mdash; and
-        Adam never opens a design tool. Ideas come from one of two places:
-      </p>
+      <h2 style={{ marginBottom: 6 }}>
+        Fresh Content, Every Day, 🦥 levels of Effort
+      </h2>
+      <br />
+      <br />
+      <br />
 
       <div className="ideaSourceGrid">
         <Fragment animation="fade-up">

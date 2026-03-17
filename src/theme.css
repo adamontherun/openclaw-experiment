@@ -561,6 +561,12 @@
   align-items: stretch;
 }
 
+.reveal .ideaSourceGrid > *:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .reveal .ideaSourceCard {
   padding: 22px 24px;
   border-radius: 18px;
@@ -604,6 +610,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100%;
 }
 
 .reveal .ideaSourceDivider span {
