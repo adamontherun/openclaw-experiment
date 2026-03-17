@@ -1,50 +1,59 @@
-import { Code } from '@revealjs/react';
 import { Fragment } from '@revealjs/react';
 
-const workflowCode = `# Today's topic: "Cross-training for volleyball players"
-# Seed source: idea-bank
-
-# Create a tracked run in content.db
-content-run.mjs create --topic "Cross-training..." \\
-  --seed-source "idea-bank" --db memory/content.db
-
-# Generate platform images with Ideogram V3
-ideogram.mjs --prompt "Cross-training..." \\
-  --aspect 1x1 --output social/assets/ig-2026-03-15.png
-ideogram.mjs --prompt "Cross-training..." \\
-  --aspect 16x9 --output social/assets/x-2026-03-15.png
-
-# Write platform-specific copy
-content-run.mjs update --id 6 \\
-  --copy-x "Your secret weapon to the next level? 🥊🩰"
-  --copy-instagram "<full IG caption with hashtags>" \\
-  --copy-threads "<500 char threads version>" \\
-  --db memory/content.db
-
-# Publish to all 3 channels via Buffer API
-buffer.mjs publish --run-id 6 \\
-  --gog-account adam@volleyintel.com --mode shareNow
-
-# Mark published + notify Telegram
-content-run.mjs mark-published --id 6 --db memory/content.db`;
+const steps = [
+  {
+    num: '1',
+    title: 'Pick the Idea',
+    desc: "Pull the next unused idea from Adam\u2019s bank \u2014 or use the AI-sourced topic from the social scan.",
+    accent: 'cyan',
+  },
+  {
+    num: '2',
+    title: 'Generate Copy',
+    desc: 'The LLM writes platform-specific scripts: a punchy tweet for X, a full caption for Instagram, and a Threads version.',
+    accent: 'purple',
+  },
+  {
+    num: '3',
+    title: 'Create the Image',
+    desc: 'Ideogram V3 generates a branded visual tailored to each platform\u2019s aspect ratio.',
+    accent: 'green',
+  },
+  {
+    num: '4',
+    title: 'Publish Everywhere',
+    desc: 'Buffer API pushes the finished package to Instagram, Threads, and X simultaneously.',
+    accent: 'orange',
+  },
+];
 
 export function ContentWorkflowSlide() {
   return (
-    <div>
-      <p className="kicker">Content Generation &mdash; Step 2</p>
-      <h2>Write, Generate, Publish</h2>
-      <p className="mini" style={{ marginBottom: 12 }}>
-        One skill file orchestrates the entire pipeline &mdash; copy, image, and multi-platform publishing.
-      </p>
-      <Code language="bash" lineNumbers="1-2|4-6|8-12|14-19|21-23|25-26">
-        {workflowCode}
-      </Code>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+      <p className="kicker">Content Generation</p>
+      <h2 style={{ marginBottom: 24 }}>From Idea to Published Post</h2>
+
+      <div className="contentPipeline">
+        {steps.map((step, i) => (
+          <Fragment key={step.num} animation="fade-up">
+            <div className="contentPipelineStage">
+              {i > 0 && <div className="contentPipelineArrow" />}
+              <div className={`contentPipelineCard accent-${step.accent}`}>
+                <div className="contentPipelineNum">{step.num}</div>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            </div>
+          </Fragment>
+        ))}
+      </div>
+
       <Fragment animation="fade-up">
-        <div style={{ display: 'flex', gap: 20, marginTop: 16 }}>
+        <div style={{ display: 'flex', gap: 16, marginTop: 28, flexWrap: 'wrap' }}>
           <div className="contentToolTag">Ideogram V3</div>
-          <div className="contentToolTag">Buffer GraphQL</div>
-          <div className="contentToolTag">Google Drive (gog)</div>
+          <div className="contentToolTag">Buffer API</div>
           <div className="contentToolTag">SQLite</div>
+          <div className="contentToolTag">OpenAI</div>
         </div>
       </Fragment>
     </div>

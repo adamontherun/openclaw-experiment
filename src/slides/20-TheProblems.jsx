@@ -11,7 +11,10 @@ export function TheProblemsSlide() {
             <div className="statusBar red" />
             <div className="statusContent">
               <h3>Sessions get stuck</h3>
-              <p>Long-running browser automation sometimes hangs. Needs manual intervention or session restart.</p>
+              <p>
+                Long-running browser automation sometimes hangs. Needs manual
+                intervention or session restart.
+              </p>
             </div>
           </div>
         </Fragment>
@@ -20,7 +23,10 @@ export function TheProblemsSlide() {
             <div className="statusBar red" />
             <div className="statusContent">
               <h3>Model sensitivity</h3>
-              <p>Cheaper models struggle with multi-step skills. Some jobs need explicit &ldquo;higher_reasoning_model&rdquo; fallback.</p>
+              <p>
+                Cheaper models struggle with multi-step skills. Some jobs need
+                explicit &ldquo;higher_reasoning_model&rdquo; fallback.
+              </p>
             </div>
           </div>
         </Fragment>
@@ -29,7 +35,10 @@ export function TheProblemsSlide() {
             <div className="statusBar red" />
             <div className="statusContent">
               <h3>Cost at scale</h3>
-              <p>16 daily cron jobs &times; LLM calls &times; browser sessions &mdash; token costs add up for a $9 MRR product.</p>
+              <p>
+                16 daily cron jobs &times; LLM calls &times; browser sessions
+                &mdash; token costs add up.
+              </p>
             </div>
           </div>
         </Fragment>

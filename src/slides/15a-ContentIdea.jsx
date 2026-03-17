@@ -3,47 +3,44 @@ import { Fragment } from '@revealjs/react';
 export function ContentIdeaSlide() {
   return (
     <div>
-      <p className="kicker">Content Generation &mdash; Step 1</p>
-      <h2>It Starts with an Idea</h2>
-      <p style={{ fontSize: '0.54em', color: 'rgba(232,234,255,0.72)', marginBottom: 14, maxWidth: 960, lineHeight: 1.5 }}>
-        Anytime I have a content idea, I drop it to Rusty on Telegram. He stores it in a SQLite idea bank.
-        Every morning at <strong style={{ color: '#fff' }}>10:30 AM</strong>, the content pipeline wakes up and checks for the next unused idea.
+      <p className="kicker">Content Generation</p>
+      <h2 style={{ marginBottom: 6 }}>Fresh Content, Every Day, Zero Effort</h2>
+      <p style={{ fontSize: '0.52em', color: 'rgba(232,234,255,0.68)', lineHeight: 1.55, maxWidth: 900, marginBottom: 20 }}>
+        VolleyIntel posts daily across Instagram, Threads, and X &mdash; and Adam
+        never opens a design tool. Ideas come from one of two places:
       </p>
-      <div className="contentFlowGrid">
+
+      <div className="ideaSourceGrid">
         <Fragment animation="fade-up">
-          <div className="contentFlowStep">
-            <div className="contentFlowNum">1</div>
-            <div className="contentFlowBody">
-              <h3>Drop an Idea</h3>
-              <p className="contentFlowChat">
-                <span className="contentFlowMe">Me on Telegram:</span>
-                &ldquo;Drop an idea in the idea bank to have a post about cross-training for volleyball players&rdquo;
-              </p>
-              <div className="contentFlowCode">
-                <code>ideas.mjs add --name &quot;Cross-training for volleyball players&quot;</code>
-              </div>
+          <div className="ideaSourceCard human">
+            <div className="ideaSourceIcon">💬</div>
+            <h3>Adam Drops an Idea</h3>
+            <p>
+              At any time, Adam messages Rusty on Telegram with a content idea.
+              Rusty saves it to the <strong>idea bank</strong> in SQLite,
+              first-in-first-out.
+            </p>
+            <div className="contentFlowChat" style={{ marginTop: 10 }}>
+              <span className="contentFlowMe">Adam on Telegram:</span>
+              &ldquo;Add an idea about cross-training for volleyball players&rdquo;
             </div>
           </div>
         </Fragment>
+
+        <div className="ideaSourceDivider">
+          <span>or</span>
+        </div>
+
         <Fragment animation="fade-up">
-          <div className="contentFlowStep">
-            <div className="contentFlowNum">2</div>
-            <div className="contentFlowBody">
-              <h3>Stored in SQLite</h3>
-              <p>The idea bank is a simple table: <code style={{ color: 'var(--accent-purple)' }}>idea_name</code> + <code style={{ color: 'var(--accent-purple)' }}>has_been_used</code>. Ideas are served oldest-first, so nothing gets lost.</p>
-              <div className="contentFlowCode">
-                <code>ideas.mjs next --db memory/ideas.db</code>
-              </div>
-            </div>
-          </div>
-        </Fragment>
-        <Fragment animation="fade-up">
-          <div className="contentFlowStep">
-            <div className="contentFlowNum">3</div>
-            <div className="contentFlowBody">
-              <h3>Cron Picks It Up</h3>
-              <p>The <code style={{ color: 'var(--accent-cyan)' }}>social-content</code> skill fires daily. If the idea bank has an unused idea, that becomes today&rsquo;s topic. Otherwise it finds a trending NCAA volleyball topic.</p>
-            </div>
+          <div className="ideaSourceCard ai">
+            <div className="ideaSourceIcon">🔍</div>
+            <h3>Rusty Finds Inspiration</h3>
+            <p>
+              Each morning, Rusty checks the idea bank. If it&rsquo;s empty,
+              he scans what coaches and athletes are posting on social media
+              and picks a trending topic in the volleyball recruiting space.
+            </p>
+            <div className="ideaSourceTag">AI-sourced from social scan</div>
           </div>
         </Fragment>
       </div>

@@ -23,7 +23,6 @@ import { TheGoodSlide } from './slides/19-TheGood';
 import { TheProblemsSlide } from './slides/20-TheProblems';
 import { AlternativesSlide } from './slides/21-Alternatives';
 import { TakeawaySlide } from './slides/22-Takeaway';
-import { EndSlide } from './slides/23-EndSlide';
 
 const BG = {
   hero: 'radial-gradient(ellipse at 20% 50%, #0c1445 0%, #080b1a 70%)',
@@ -146,9 +145,6 @@ export default function App() {
       </Slide>
       <Slide transition="fade" backgroundGradient={BG.takeaway}>
         <TakeawaySlide />
-      </Slide>
-      <Slide transition="fade" backgroundGradient={BG.end}>
-        <EndSlide />
       </Slide>
     </Deck>
   );

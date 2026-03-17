@@ -11,7 +11,10 @@ export function TheGoodSlide() {
             <div className="statusBar green" />
             <div className="statusContent">
               <h3>Skills are intuitive</h3>
-              <p>Markdown files with steps &mdash; no SDK, no framework. Just describe what you want.</p>
+              <p>
+                Markdown files with steps &mdash; no SDK, no framework. Just
+                describe what you want.
+              </p>
             </div>
           </div>
         </Fragment>
@@ -19,8 +22,11 @@ export function TheGoodSlide() {
           <div className="statusItem">
             <div className="statusBar green" />
             <div className="statusContent">
-              <h3>Cron scheduling just works</h3>
-              <p>16 jobs running reliably. Isolated sessions, configurable timeouts, automatic retries.</p>
+              <h3>Telegram is very convenient</h3>
+              <p>
+                There is something magical about being able to interact with
+                your bot so easily.
+              </p>
             </div>
           </div>
         </Fragment>
@@ -29,7 +35,10 @@ export function TheGoodSlide() {
             <div className="statusBar green" />
             <div className="statusContent">
               <h3>Browser automation is powerful</h3>
-              <p>Reddit Ads, Search Console, TeamSnap, Threads, Instagram &mdash; all via managed browser profiles.</p>
+              <p>
+                Reddit Ads, Search Console, TeamSnap, Threads, Instagram &mdash;
+                all via managed browser profiles.
+              </p>
             </div>
           </div>
         </Fragment>
@@ -38,7 +47,10 @@ export function TheGoodSlide() {
             <div className="statusBar green" />
             <div className="statusContent">
               <h3>Multi-channel delivery</h3>
-              <p>iMessage, Telegram, Gmail, Google Drive &mdash; all from one agent with native integrations.</p>
+              <p>
+                iMessage, Telegram, Gmail, Google Drive &mdash; all from one
+                agent with native integrations.
+              </p>
             </div>
           </div>
         </Fragment>
@@ -47,7 +59,10 @@ export function TheGoodSlide() {
             <div className="statusBar green" />
             <div className="statusContent">
               <h3>SQLite as the glue</h3>
-              <p>engagement.db, mentions.db, content.db, life-ops.sqlite &mdash; structured data that skills can query and share.</p>
+              <p>
+                engagement.db, mentions.db, content.db, life-ops.sqlite &mdash;
+                structured data that skills can query and share.
+              </p>
             </div>
           </div>
         </Fragment>
