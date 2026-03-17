@@ -10,7 +10,6 @@ export function TitleSlide() {
       <div className="titleLayer titleRing titleRingA" />
       <div className="titleLayer titleRing titleRingB" />
       <div className="titlePanel">
-        <p className="titleEyebrow">One agent. Two worlds.</p>
         <h1 className="glow">
           OpenClaw:
           <br />
@@ -24,7 +23,11 @@ export function TitleSlide() {
         </p>
         <div className="titleBuiltAt">
           <span className="titleBuiltAtLabel">Built at</span>
-          <img src={`${base}images/beta-acid-logo.png`} alt="Beta Acid" className="titleBuiltAtLogo" />
+          <img
+            src={`${base}images/beta-acid-logo.png`}
+            alt="Beta Acid"
+            className="titleBuiltAtLogo"
+          />
         </div>
       </div>
     </div>
