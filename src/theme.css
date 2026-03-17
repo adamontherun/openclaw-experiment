@@ -764,6 +764,20 @@
   font-weight: 600;
 }
 
+.reveal .videoOverlayBox.briefOverlay {
+  width: 72%;
+  max-height: 80%;
+  overflow-y: auto;
+  text-align: left;
+  padding: 20px 24px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 240, 255, 0.35) transparent;
+}
+
+.reveal .briefOverlay .briefSlideWrap {
+  max-height: none;
+}
+
 .reveal .briefSlideWrap {
   max-height: 620px;
   display: flex;

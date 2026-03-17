@@ -101,7 +101,14 @@ export default function App() {
       </Stack>
 
       <Stack>
-        <Slide backgroundGradient={BG.sectionB}>
+        <Slide
+          backgroundGradient={BG.sectionB}
+          data-background-video="/videos/volleyintel.webm"
+          data-background-video-loop
+          data-background-video-muted
+          data-background-size="cover"
+          data-background-opacity="1"
+        >
           <VolleyIntelHeaderSlide />
         </Slide>
         <Slide transition="fade" backgroundGradient={BG.contentB2}>
