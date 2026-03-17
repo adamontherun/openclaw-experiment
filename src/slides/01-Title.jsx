@@ -9,7 +9,8 @@ export function TitleSlide() {
       <div className="accentBar" />
       <p className="lead">
         From daily dad jokes to running a micro-SaaS &mdash; how one AI agent
-        helps with my personal life and a mini app on autopilot.
+        helps with my personal life and put the management of my mini app on
+        autopilot 🛩️🍸
       </p>
     </div>
   );

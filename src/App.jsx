@@ -4,6 +4,7 @@ import { TitleSlide } from './slides/01-Title';
 import { HookSlide } from './slides/02-Hook';
 import { TimelineSlide } from './slides/03-Timeline';
 import { PersonalHeaderSlide } from './slides/04-PersonalHeader';
+import { RustyShowcaseSlide, SHOWCASE_COUNT } from './slides/04a-RustyShowcase';
 import { DailyBriefSlide } from './slides/05-DailyBrief';
 import { HeatherJokeExamplesSlide, HeatherJokeSlide } from './slides/06-HeatherJoke';
 import { HeatherJokeCodeSlide } from './slides/07-HeatherJokeCode';
@@ -22,8 +23,6 @@ import { HonestHeaderSlide } from './slides/18-HonestHeader';
 import { TheGoodSlide } from './slides/19-TheGood';
 import { TheProblemsSlide } from './slides/20-TheProblems';
 import { AlternativesSlide } from './slides/21-Alternatives';
-import { TakeawaySlide } from './slides/22-Takeaway';
-
 const BG = {
   hero: 'radial-gradient(ellipse at 20% 50%, #0c1445 0%, #080b1a 70%)',
   hook: 'radial-gradient(ellipse at 70% 30%, #12084a 0%, #080b1a 70%)',
@@ -47,7 +46,6 @@ const BG = {
   good: 'linear-gradient(160deg, #081420 0%, #0a1228 100%)',
   bad: 'linear-gradient(160deg, #140a1a 0%, #0e0c22 100%)',
   alts: 'linear-gradient(160deg, #0c0e30 0%, #10082a 100%)',
-  takeaway: 'radial-gradient(ellipse at 50% 40%, #1a1060 0%, #080b1a 70%)',
   end: 'radial-gradient(ellipse at 50% 60%, #0c1450 0%, #080b1a 70%)',
 };
 
@@ -80,6 +78,11 @@ export default function App() {
         <Slide backgroundGradient={BG.sectionA}>
           <PersonalHeaderSlide />
         </Slide>
+        {Array.from({ length: SHOWCASE_COUNT }, (_, i) => (
+          <Slide key={`showcase-${i}`} transition="fade" backgroundGradient={BG.sectionA}>
+            <RustyShowcaseSlide index={i} />
+          </Slide>
+        ))}
         <Slide backgroundGradient={BG.contentA1}>
           <DailyBriefSlide />
         </Slide>
@@ -158,9 +161,6 @@ export default function App() {
 
       <Slide backgroundGradient={BG.alts}>
         <AlternativesSlide />
-      </Slide>
-      <Slide transition="fade" backgroundGradient={BG.takeaway}>
-        <TakeawaySlide />
       </Slide>
     </Deck>
   );
