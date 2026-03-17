@@ -8,7 +8,7 @@ export function ThreadsEngageVideoSlide() {
         loop
         playsInline
       />
-      <div className="videoOverlayBox">
+      <div className="videoOverlayBox softOverlay fragment fade-out">
         <h3>Daily Engagement Cycle</h3>
         <p>
           Every day, the agent searches each platform for high-value accounts

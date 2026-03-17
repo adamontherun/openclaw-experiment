@@ -111,6 +111,15 @@ export default function App() {
         >
           <VolleyIntelHeaderSlide />
         </Slide>
+        <Slide
+          transition="fade"
+          backgroundGradient={BG.sectionB}
+          data-background-video="/videos/volleyintel.webm"
+          data-background-video-loop
+          data-background-video-muted
+          data-background-size="cover"
+          data-background-opacity="1"
+        />
         <Slide transition="fade" backgroundGradient={BG.contentB2}>
           <GmailTriageSlide />
         </Slide>

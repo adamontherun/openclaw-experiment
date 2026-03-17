@@ -1,12 +1,22 @@
 export function VolleyIntelHeaderSlide() {
   return (
-    <div className="centered">
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      width: '100%',
+      height: '100%',
+      paddingTop: 12,
+      boxSizing: 'border-box',
+    }}>
       <div style={{
-        background: 'rgba(8, 11, 26, 0.72)',
+        background: 'rgba(8, 11, 26, 0.52)',
         backdropFilter: 'blur(12px)',
         borderRadius: 20,
         padding: '40px 56px',
         border: '1px solid rgba(255,255,255,0.08)',
+        textAlign: 'center',
       }}>
         <p className="kicker">Part 2</p>
         <h1 className="sectionHeader glow">VolleyIntel</h1>

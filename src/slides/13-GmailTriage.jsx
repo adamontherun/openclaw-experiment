@@ -1,36 +1,41 @@
 import { Code } from '@revealjs/react';
 
-const triageFlow = `# Gmail Manager — Triage Mode
-# Runs daily at 11:30 AM HST
+const skillFile = `# SKILL.md — the actual file the AI agent reads
 
-gog --json --account adam@volleyintel.com \\
-  gmail search 'newer_than:6h' --max 50
+## Triage mode (runs daily 11:30 AM)
 
-# For each thread:
-#   Spam/promos   → archive (remove INBOX label)
-#   Newsletters   → archive
-#   Customer mail → draft reply using BRAND.md + knowledge-base
+1. Check which threads already have a draft → skip them
+2. Search inbox: \`gmail search 'newer_than:6h' --max 50\`
+3. Read each thread and classify:
+   - Spam / promos → archive
+   - Newsletters   → archive
+   - Customer mail → draft a reply using BRAND.md
 
-node gmail-drafts.mjs create \\
-  --thread-id "<id>" \\
-  --reply-to-message-id "<msgId>" \\
-  --draft-reply "<AI-generated reply>" \\
-  --db memory/gmail.db
+## Approval mode (Telegram)
 
-# Send numbered approval summary → Telegram
-# Adam replies: "approve 1", "edit 2: ...", "skip 3"`;
+Adam gets a numbered summary of pending drafts.
+He replies with:
+  approve 1        → send the draft
+  edit 2: <text>   → revise and re-save
+  skip 3           → mark as skipped
+
+## After approval
+
+Send via Gmail, mark sent in SQLite, archive thread.`;
 
 export function GmailTriageSlide() {
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 6 }}>
         <span className="skillBadge">skills/gmail-manager</span>
         <span className="deliveryTag telegram">Telegram approval</span>
       </div>
-      <h2>Email Triage &amp; Draft Replies</h2>
-      <Code language="bash" lineNumbers="1-2|4-5|7-11|13-17|19-21">
-        {triageFlow}
-      </Code>
+      <h2 style={{ marginBottom: 10 }}>Email Triage &amp; Draft Replies</h2>
+      <div style={{ flex: 1, minHeight: 0, overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: 'rgba(0,240,255,0.35) transparent' }}>
+        <Code language="markdown" lineNumbers="1|3-10|12-18|20-22">
+          {skillFile}
+        </Code>
+      </div>
     </div>
   );
 }
